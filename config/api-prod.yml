@@ -1,0 +1,18 @@
+apiUrl:
+  admin: "https://lms-api.lionmile.com"
+  uc: "https://lms-api.lionmile.com"
+  pc: "https://lms-api.lionmile.com"
+  wc: "https://lms-api.lionmile.com"
+  oc: "https://lms-api.lionmile.com"
+  goStore: "https://lms-api.lionmile.com"
+  sp: "https://sp.ehsy.com"
+
+goStore:
+  authName: "admin"
+  authPassword: "ehsy2023"
+
+accessToken:
+  client_id: "platform_lms"
+  client_secret: "G1nsZiHYJcsEZEXzw7CCM6dR1Lhxn9R8"
+  username: "platform_lms_prod"
+  password: "15291bb50b918c7d136584abc6607bf7"

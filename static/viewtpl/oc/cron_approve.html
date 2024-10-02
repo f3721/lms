@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="font-size:14px;font-family:'微软雅黑','Microsoft Yahei','黑体';">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>狮行驿站</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#fff" style="background-color:#fff;border-collapse:collapse;border:1px solid #eee;border-radius:3px;font-size:14px;font-family:'微软雅黑','Microsoft Yahei','黑体';">
+  <tbody>
+     <tr style="border-bottom:1px solid #ccc;height:90px;background-color:#f7f7f7;">
+           <td width="276"><img src="{{.LogoUrl}}" alt="狮行驿站" style="height:50px;max-width:300px;margin-left:18px;"></td>
+           <td width="300"></td>
+        </tr>
+       <tr>
+            <td style="padding:50px;padding-bottom:20px;width:100%;" colspan="3">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                 <tbody>
+                     <tr>
+                            <td style="color: #333;font-size: 20px;padding-bottom:28px;">
+                             <b>尊敬的 {{.UserName}} ， 您好！</b>
+                            </td>
+                       </tr>
+
+                       <tr>
+                            <td style="padding-bottom:20px;">
+                             <p style="margin:0;line-height:28px;color:#333;">您有{{.Num}}条新的领用申请！请尽快完成审批！</p>
+                                <p style="margin:0;color:#999;font-size:13px;">提示：为了您的数据安全，邮件中的审批链接有效期为30h</p>
+                            </td>
+                       </tr>
+
+                       <tr>
+                            <td style="padding-bottom:48px;">
+                             <a style="color:#fff;background-color:#328cd1;line-height:40px;text-align:center;display:inline-block;padding:0 50px;border-radius:4px;text-decoration:none;font-size:24px;" href={{.ApproveUrl}}>去审批</a>
+                         </td>
+                       </tr>
+
+                       <tr>
+                            <td style="padding-bottom:20px;border-bottom:1px dashed #cdcdcd">
+                             <p style="margin:0;line-height:24px;color:#999">如果点击无效，请复制下方网页地址到浏览器地址栏中打开：</p>
+                               <p style="margin:0;color:#0066cc;"><a href="{{.ApproveUrl}}" style="margin-right:5px;color:#0066cc;text-decoration:none;word-break:break-all;">{{.ApproveUrl}}</a></p>
+                            </td>
+                       </tr>
+
+                       <tr>
+                            <td style="padding-bottom:90px;">
+                             <p style="margin:0;line-height:24px;color:#333;">狮行驿站电子领用申请单</p>
+                                <p style="margin:0;color:#999">{{nowDateTime}}</p>
+                            </td>
+                       </tr>
+
+                       
+                   </tbody>
+                </table>
+            </td>
+       </tr>
+       
+   </tbody>
+</table>
+</body>
+</html>

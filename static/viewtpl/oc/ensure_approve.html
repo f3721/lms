@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style="font-size:14px;font-family:'微软雅黑','Microsoft Yahei','黑体';">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>狮行驿站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#fff" style="background-color:#fff;border-collapse:collapse;border:1px solid #ccc;border-radius:2px;font-size:14px;font-family:'微软雅黑','Microsoft Yahei','黑体';">
+    <tbody>
+    <tr style="border-bottom:1px solid #ccc;height:90px;background-color:#f7f7f7;">
+        <td width="276"><img src="{{.LogoUrl}}" alt="狮行驿站" style="height:50px;max-width:300px;margin-left:18px;"></td>
+        <td width="300"></td>
+    </tr>
+    <tr>
+        <td style="padding: 45px;width:100%;" colspan="3">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                <tr>
+                    <td style="color: #153643;font-size: 22px;padding-bottom:30px;">
+                        <b>尊敬的 {{.UserName}} ， 您好！</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:20px;">
+                        <p style="margin:0;line-height:28px;color:#313131;">领用单待确认通知</p>
+                        <p style="margin:0;color:#989898;font-size:13px;">【{{.WarehouseName}}】领用单号为：{{.OrderId}}，客户已审批通过，待确认领用单后分拣商品，请及时处理！</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:45px;">
+                        <a style="color:#fff;background-color:#2a8ad6;line-height:40px;text-align:center;display:inline-block;padding:0 50px;border-radius:4px;text-decoration:none;font-size:24px;" href="{{.ApproveUrl}}">去审批/Proceed to approval</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:15px;border-bottom:1px dashed #cdcdcd">
+                        <p style="margin:0;line-height:24px;">如果点击无效，请复制下方网页地址到浏览器地址栏中打开：</p>
+                        <p style="margin:0;color:#2a8ad6;"><a href="{{.ApproveUrl}}" style="margin-right:5px;color:#2a8ad6;text-decoration:none;word-break:break-all;">{{.ApproveUrl}}</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:5px;">
+                        <span style="color:#333333;">产品信息</span><span style="color: #979797">/Product Info</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="border-top: rgb(204,204,204) 1px solid; border-right: rgb(204,204,204) 1px solid; border-bottom-width: 0px; border-collapse: collapse; text-align: center; border-left: rgb(204,204,204) 1px solid" cellpadding=10>
+                            <tbody>
+                            <tr style="border-bottom: rgb(204,204,204) 1px solid">
+                                <td width=90>
+                                    <span style="display: block">序号</span>
+                                    <span style="color: rgb(153,153,153); display: block">no.</span>
+                                </td>
+                                <td width=230>
+                                    <span style="display: block">驿站订货号</span>
+                                    <span style="color: rgb(153,153,153); display: block">product
+                                                        id</span>
+                                </td>
+                                <td style="text-align: left" width=330>
+                                    <span style="display: block">客户物料编码</span>
+                                    <span
+                                            style="color: rgb(153,153,153); display: block">material</span>
+                                </td>
+                                <td style="text-align: left" width=500>
+                                    <span style="display: block">产品描述</span>
+                                    <span style="color: rgb(153,153,153); display: block">product
+                                                        name</span>
+                                </td>
+                                <td width=100>
+                                    <span style="display: block">数量</span>
+                                    <span
+                                            style="color: rgb(153,153,153); display: block">quantity</span>
+                                </td>
+                            </tr>
+                            {{range $K,$V := .OrderDetails}}
+                            <tr height=22>
+                                <td><span>{{addOne $K}}</span></td>
+                                <td><span>{{.SkuCode}}</span></td>
+                                <td style="text-align: left;"><span>{{.ProductNo}}</span></td>
+                                <td style="text-align: left;"><span>{{.ProductName}}</span></td>
+                                <td><span>{{.Quantity}}</span></td>
+                            </tr>
+                            {{end}}
+                            <tr style="border-bottom: rgb(204,204,204) 1px solid">
+                                <td colspan=5>
+                                    <p style="color: rgb(42,138,214); margin: 0px"></p>
+                                    <a style="text-decoration: none; word-break: break-all; color: rgb(42,138,214); margin-right: 5px"
+                                       href="{{.ApproveUrl}}">更多产品/more products</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr style="border-top: 1px solid #ccc;height:75px;">
+        <td colspan="3" style="padding:15px 45px;font-size:12px;">
+            <p style="margin:0;">
+                <a href="" style="color:#2a8ad6;text-decoration:none;">西域</a><span style="color:#b4b4b4;">·专业MRO自营电商</span>
+            </p>
+            <p style="margin:0;color:#b4b4b4;">Copyright ©2016 西域ehsy.com 版权所有</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

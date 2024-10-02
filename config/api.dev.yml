@@ -1,0 +1,18 @@
+apiUrl:
+  admin: "http://localhost:8000"
+  uc: "http://localhost:8001"
+  pc: "http://localhost:8002"
+  wc: "http://localhost:8003"
+  oc: "http://localhost:8004"
+  goStore: "http://localhost:7800"
+  sp: "http://sp-test8.ehsy.com"
+
+goStore:
+  authName: "admin"
+  authPassword: "ehsy2023"
+
+accessToken:
+  client_id: "platform_lms"
+  client_secret: "D7gOrR3517eO0B2CgnBvMQZZ8UTwcuc5"
+  username: "platform_lms_test"
+  password: "53cbce077dcabdc8aad0e4e5cfde6be9"

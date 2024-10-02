@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html style="font-size:14px;font-family:'微软雅黑','Microsoft Yahei','黑体';">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>狮行驿站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#fff"
+        style="border-collapse:collapse;border:1px solid #ccc;border-radius:2px;font-size:14px;font-family:'微软雅黑','Microsoft Yahei',sans-serif;">
+        <tbody>
+            <tr style="border-bottom: 1px solid #ccc;height:80px;background-color:#f7f7f7;">
+                <td width="276px">
+                    <img src="{{.LogoUrl}}" alt="狮行驿站" style="height:50px;max-width:300px;margin-left:30px;">
+                </td>
+                <td width="200"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="width:100%; padding-top: 25px;color: #2E9B64;text-align: center">
+                    <span style="display: block;font-size: 18px;color:#0161cf;">审批提示</span>
+                    <span style="display: block;font-size: 12px;color:#0161cf;">Receiving Request</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="padding: 20px 30px;width:100%;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <td style="padding-bottom:20px;">
+                                    <span style="display:block;font-size: 14px;color: #333333;">尊敬的 <b>{{.UserName}}</b>
+                                        ， 您好！</span>
+                                    <span style="display:block;font-size: 12px;color: #979797;">Dear
+                                        {{.UserName}},</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:20px;">
+                                    <p style="margin:0;color:#333333;">您收到一条新的领用申请单！请尽快完成审批！</p>
+                                    <p style="margin:0;color:#979797;font-size:12px;">You have a new receiving request,
+                                        please proceed to approval.</p>
+                                    <p style="margin:0;color:#333333;font-size:14px;">审批单号(PR No.) ：{{.PresoNo}} </p>
+                                    <p style="margin:0;color:#333333;font-size:14px;">客户PO号(PO No.) ：{{.ContractNo}}
+                                    </p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:20px;">
+                                    <a style="color:#ffffff;background-color:#2a8ad6;line-height:40px;text-align:center;display:inline-block;padding:0 20px;border-radius:4px;text-decoration:none;font-size:14px;"
+                                        href="{{.ApproveUrl}}">去审批/Proceed to approval</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:20px;">
+                                    <p style="margin:0;font-size:14px;color:#333333;line-height: 24px;">
+                                        如果点击无效，请复制下方网页地址到浏览器地址栏中打开：</p>
+                                    <p style="margin:0;font-size:12px;color:#979797;line-height: 14px;">If there is no
+                                        response for above button, please copy the following URL and open it in a
+                                        browser for the furthur operations:</p>
+                                    <p style="margin:0;font-size:13px;">
+                                        <a href="{{.ApproveUrl}}"
+                                            style="margin-right:5px;color:#0066CC;text-decoration:none;word-break:break-all;line-height: 18px;">{{.ApproveUrl}}</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:5px;">
+                                    <span style="color:#333333;">产品信息</span><span style="color: #979797">/Product
+                                        Info</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table
+                                        style="border-top: rgb(204,204,204) 1px solid; border-right: rgb(204,204,204) 1px solid; border-bottom-width: 0px; border-collapse: collapse; text-align: center; border-left: rgb(204,204,204) 1px solid"
+                                        cellpadding=10>
+                                        <tbody>
+                                            <tr style="border-bottom: rgb(204,204,204) 1px solid">
+                                                <td width=90>
+                                                    <span style="display: block">序号</span>
+                                                    <span style="color: rgb(153,153,153); display: block">no.</span>
+                                                </td>
+                                                <td width=230>
+                                                    <span style="display: block">驿站订货号</span>
+                                                    <span style="color: rgb(153,153,153); display: block">product
+                                                        id</span>
+                                                </td>
+                                                <td style="text-align: left" width=330>
+                                                    <span style="display: block">客户物料编码</span>
+                                                    <span
+                                                        style="color: rgb(153,153,153); display: block">material</span>
+                                                </td>
+                                                <td style="text-align: left" width=500>
+                                                    <span style="display: block">产品描述</span>
+                                                    <span style="color: rgb(153,153,153); display: block">product
+                                                        name</span>
+                                                </td>
+                                                <td width=100>
+                                                    <span style="display: block">数量</span>
+                                                    <span
+                                                        style="color: rgb(153,153,153); display: block">quantity</span>
+                                                </td>
+                                            </tr>
+                                            {{range $K,$V := .PresoDetails}}
+                                            <tr height=22>
+                                                <td><span>{{addOne $K}}</span></td>
+                                                <td><span>{{.SkuCode}}</span></td>
+                                                <td style="text-align: left;"><span>{{.ProductNo}}</span></td>
+                                                <td style="text-align: left;"><span>{{.ProductName}}</span></td>
+                                                <td><span>{{.Quantity}}</span></td>
+                                            </tr>
+                                            {{end}}
+                                            <tr style="border-bottom: rgb(204,204,204) 1px solid">
+                                                <td colspan=5>
+                                                    <p style="color: rgb(42,138,214); margin: 0px"></p>
+                                                    <a style="text-decoration: none; word-break: break-all; color: rgb(42,138,214); margin-right: 5px"
+                                                        href="{{.ApproveUrl}}">更多产品/more products</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
